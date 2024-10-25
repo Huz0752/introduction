@@ -814,7 +814,8 @@
 			}
 
 			#nav > ul > li > a,
-			#nav > ul > li > span
+			#nav > ul > li > span,
+			#nav > ul > li > div
 			{
 				display: block;
 				margin-left: 0.7em;

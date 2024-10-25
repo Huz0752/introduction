@@ -1,5 +1,5 @@
 <template>
-    
+
     <body class="homepage">
         <!-- Header -->
         <div id="header">
@@ -14,11 +14,19 @@
                 <nav id="nav">
                     <ul>
                         <li class="active">
-                            <a href="index.html">Homepage</a>
+                            <a href="index.html">{{ $t('navbar[0]') }}</a>
                         </li>
-                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="#footer">CONTACT ME</a></li>
+                        <li><a href="left-sidebar.html">{{ $t('navbar[1]') }}</a></li>
+                        <li><a href="right-sidebar.html">{{ $t('navbar[2]') }}</a></li>
+                        <li><a href="#footer">{{ $t('navbar[3]') }}</a></li>
+                        <li>
+                            <div class="locale-changer">
+                                <select v-model="$i18n.locale">
+                                    <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`"
+                                        :value="locale">{{ locale }}</option>
+                                </select>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -318,11 +326,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const name = ref('Welcome!')
+import { ref, watch } from 'vue'
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
+
+const name = ref(t('welcome'))
+
 setTimeout(() => {
-    name.value = 'WU JUN-YI'
+    name.value = t('name')
 }, 1100)
+
+watch(locale, () => {
+    console.log(locale.value);
+    name.value = t('welcome')
+    setTimeout(() => {
+        name.value = t('name')
+    }, 1100)
+});
+
+
 </script>
 
 <style scoped>
