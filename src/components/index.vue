@@ -243,26 +243,22 @@
                     <div class="4u">
                         <section>
                             <h2>{{ $t("footer.resume") }}</h2>
-                            <i class="fa-solid fa-file-user"></i>
-                            <p><strong>Huz07522@gmail.com </strong></p>
-                            <!-- <a href="#" class="button">Submit</a> -->
-                             <br>
+                            <a style="color: aliceblue;" href="https://drive.google.com/file/d/1CDdc9PciqTiBTpIEByoz6U3PrWuDdoSs/view?usp=sharing" target="_blank"><font-awesome-icon size="2x" title="Resume" :icon="['fas', 'file']" /></a>
                         </section>
                     </div>
                     <div class="4u">
-                        <section>
+                        <section class="foot-icons">
                             <h2>{{ $t("footer.contact") }}</h2>
-                            <p><strong>Huz07522@gmail.com </strong></p>
-                            <!-- <a href="#" class="button">Submit</a> -->
-                             <br>
+                            <li><a href="mailto:Huz07522@gmail.com" target="_blank"><font-awesome-icon size="2x" title="Email" :icon="['far', 'envelope']" /></a></li>
+                            <li><a href="mailto:Huz07522@gmail.com" target="_blank"><p><strong>Huz07522@gmail.com </strong></p></a></li>
+                            
                         </section>
                     </div>
                     <div class="4u">
-                        <section>
+                        <section class="foot-icons">
                             <h2>{{ $t("footer.social") }}</h2>
-                            <p><strong>Huz07522@gmail.com </strong></p>
-                            <!-- <a href="#" class="button">Submit</a> -->
-                             <br>
+                            <li><a href="https://www.linkedin.com/in/jun-yi-wu-218739227/" target="_blank"><font-awesome-icon  size="2x" title="Linkedin":icon="['fab', 'linkedin']" /></a></li>
+                            <li><a href="https://github.com/Huz0752/" target="_blank"><font-awesome-icon  size="2x" title="Github" :icon="['fab', 'github']" /></a></li>
                         </section>
                     </div>
                 </div>
@@ -293,23 +289,9 @@ watch(locale, () => {
     }, 1100)
 });
 
-
 </script>
 
 <style scoped>
-#logo {
-    animation: openIn 1s ease-in-out;
-}
 
-@keyframes openIn {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
 </style>
