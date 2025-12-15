@@ -1,26 +1,574 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700" rel="stylesheet"
-		type="text/css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="src/assets/js/skel.min.js"></script>
-	<script src="src/assets/js/skel-panels.min.js"></script>
-	<script src="src/assets/js/init.js"></script><noscript>
-		<link rel="stylesheet" href="src/assets/css/skel-noscript.css">
-		<link rel="stylesheet" href="src/assets/css/style.css">
-		<link rel="stylesheet" href="src/assets/css/style-desktop.css">
-	</noscript>
-	<script type="module" src="/src/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伍竣義的個人網頁</title>
+    <link rel="icon" href="/src/bird-D4n8ZKEo.ico">
+    <meta name="description" content="伍竣義 - 專注於AI數據挖掘、網路爬蟲、LLM應用與自動化流程的開發者。使用Python與C++構建智能數據解決方案。">
+    <meta name="keywords" content="AI數據挖掘,網路爬蟲,Python,C++,LLM應用,n8n自動化,數據處理">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
-
 <body>
-	<div id="app"></div>
-</body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">伍竣義</a>
+            <button class="menu-toggle" aria-label="導航選單">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">首頁</a></li>
+                <li><a href="#expertise" class="nav-link">專業領域</a></li>
+                <li><a href="#portfolio" class="nav-link">專案實例</a></li>
+                <li><a href="#tech" class="nav-link">技術棧</a></li>
+                <li><a href="#contact" class="nav-link">聯繫</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- 主內容區 -->
+    <main>
+        <!-- Hero 區域 -->
+        <section id="home" class="section hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">伍竣義 <span class="highlight">AI數據工程師</span></h1>
+                    <p class="hero-subtitle">專注於數據挖掘、爬蟲與自動化流程開發</p>
+                    <!-- 學校資訊 -->
+                    <div class="education-info">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>國立台灣科技大學 資訊工程學系</span>
+                    </div>
+                    <p class="hero-description">
+                        <br>將數據轉化為洞察，並構建智能自動化系統。專精於使用<span class="highlight">Python</span>、
+                        <span class="highlight">C++</span>、<span class="highlight">LLM</span>技術與<span class="highlight">n8n</span>等工具，
+                        為企業與個人提供高效的數據採集、處理與應用解決方案。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">查看專案實例</a>
+                        <a href="#contact" class="btn btn-secondary">技術諮詢</a>
+                    </div>
+                    <div class="hero-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">網路爬蟲</span>
+                        <span class="tech-tag">LLM應用</span>
+                        <span class="tech-tag">n8n自動化</span>
+                        <span class="tech-tag">數據挖掘</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image">
+                        <div class="avatar-container">
+                            <div class="avatar-wrapper">
+                                <!-- 大頭照實際路徑 -->
+                                <img src="src\bio-M8ICmca8.jpg" alt="伍竣義的大頭照" class="avatar" id="avatarImage">
+                            </div>
+                            <div class="avatar-controls">
+                                <button class="avatar-btn" id="zoomInBtn">
+                                    <i class="fas fa-search-plus"></i> 放大
+                                </button>
+                                <button class="avatar-btn" id="zoomOutBtn">
+                                    <i class="fas fa-search-minus"></i> 縮小
+                                </button>
+                                <button class="avatar-btn" id="resetZoomBtn">
+                                    <i class="fas fa-sync-alt"></i> 還原
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 專業領域 -->
+        <section id="expertise" class="section expertise">
+            <div class="container">
+                <h2 class="section-title">核心專業領域</h2>
+                <p class="section-subtitle">專注於數據價值鏈的關鍵環節</p>
+                
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <h3>智能網路爬蟲</h3>
+                        <ul class="expertise-list">
+                            <li>反爬蟲策略繞過與模擬</li>
+                            <li>分散式與異步爬蟲架構</li>
+                            <li>JavaScript渲染頁面抓取</li>
+                            <li>API逆向工程與數據採集</li>
+                            <li>數據質量驗證與清洗</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>LLM應用開發</h3>
+                        <ul class="expertise-list">
+                            <li>GPT系列模型應用開發</li>
+                            <li>RAG (檢索增強生成) 系統</li>
+                            <li>智能客服與對話系統</li>
+                            <li>文檔解析與智能問答</li>
+                            <li>提示工程與模型微調</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>自動化流程</h3>
+                        <ul class="expertise-list">
+                            <li>n8n工作流設計與部署</li>
+                            <li>跨平台數據管道構建</li>
+                            <li>定時任務與監控告警</li>
+                            <li>API集成與第三方服務對接</li>
+                            <li>企業級自動化解決方案</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>數據分析與挖掘</h3>
+                        <ul class="expertise-list">
+                            <li>結構化與非結構化數據處理</li>
+                            <li>模式識別與趨勢分析</li>
+                            <li>機器學習模型應用</li>
+                            <li>可視化報表與儀表板</li>
+                            <li>商業洞察提取</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 專案實例 -->
+        <section id="portfolio" class="section portfolio">
+            <div class="container">
+                <h2 class="section-title">專案實例</h2>
+                <p class="section-subtitle">實際解決問題的技術方案</p>
+                
+                <article class="portfolio-card">
+                    <div class="card-image">
+                        <div class="placeholder-image" style="background: url('src/logo2.png');  background-position: center; background-repeat: no-repeat;">
+                            <i class="fas"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <a href="#" class="card-link" aria-label="查看專案詳情">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">社群平台用戶數據分析平台 SOCIAL INSIGHT</h3>
+                        <p class="card-description">
+                            結合爬蟲技術、AI 模型與自動化流程的社群使用者分析系統。系統透過 FastAPI 呼叫後台爬蟲(Playwright)取得 X(Twitter) 的公開資料來源，並透過 n8n 與本地 Ollama 亦或是OpenRouter LLM Models進行使用者特徵分析，最終將結果回傳前端提供即時展示。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Fastapi</span>
+                            <span class="tag">n8n</span>
+                            <span class="tag">Ollama</span>
+                        </div>
+                        <div class="card-stats">
+                            <span><i class="fas fa-globe"></i> X(Twitter)</span>
+                            <span><i class="fas fa-language"></i> 多模型支持</span>
+                        </div>
+                    </div>
+                    <!-- 在卡片底部添加擴充內容 -->
+                    <div class="card-expanded">
+                        <div class="video-container">
+                            <video controls style="width:100%; max-height:400px;">
+                                <source src="src\social_insight_demo.mp4" type="video/mp4">
+                                您的瀏覽器不支援影片播放
+                            </video>
+                        </div>
+                    </div>
+                </article>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 技術棧 -->
+        <section id="tech" class="section tech">
+            <div class="container">
+                <h2 class="section-title">技術棧</h2>
+                <p class="section-subtitle">構建解決方案的工具與技術</p>
+                
+                <div class="tech-container">
+                    <div class="tech-category">
+                        <h3><i class="fas fa-code"></i> 程式語言</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <span class="tech-name">Python</span>
+                                <div class="tech-level">
+                                    <div class="tech-level-bar" style="width: 95%;"></div>
+                                </div>
+                                <span class="tech-desc">數據處理、爬蟲、機器學習</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-name">C++</span>
+                                <div class="tech-level">
+                                    <div class="tech-level-bar" style="width: 85%;"></div>
+                                </div>
+                                <span class="tech-desc">高性能計算、系統開發</span>
+                            </div>
+                            <div class="tech-item">
+                                <span class="tech-name">SQL</span>
+                                <div class="tech-level">
+                                    <div class="tech-level-bar" style="width: 80%;"></div>
+                                </div>
+                                <span class="tech-desc">數據庫操作與優化</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3><i class="fas fa-tools"></i> 框架與工具</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-large">Scrapy / BeautifulSoup</span>
+                            <span class="tech-tag-large">Selenium / Playwright</span>
+                            <span class="tech-tag-large">Pandas / NumPy</span>
+                            <span class="tech-tag-large">PyTorch / TensorFlow</span>
+                            <span class="tech-tag-large">FastAPI / Flask</span>
+                            <span class="tech-tag-large">Docker / Kubernetes</span>
+                            <span class="tech-tag-large">n8n / Apache Airflow</span>
+                            <span class="tech-tag-large">Git / CI/CD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3><i class="fas fa-robot"></i> AI/LLM相關</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-large">OpenAI API</span>
+                            <span class="tech-tag-large">LangChain / LlamaIndex</span>
+                            <span class="tech-tag-large">向量數據庫</span>
+                            <span class="tech-tag-large">RAG系統</span>
+                            <span class="tech-tag-large">提示工程</span>
+                            <span class="tech-tag-large">模型微調</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 證照 -->
+                <section class="certifications">
+                    <h3><i class="fas fa-certificate"></i> 專業證照</h3>
+                    <div class="certifications-grid">
+                        <div class="cert-card">
+                            <div class="cert-img-container">
+                                <!-- 替換 src 為你的證照圖片路徑 -->
+                                <img src="src\CPE-CTOiNCLW.jpg" alt="CPE" class="cert-img">
+                                <div class="cert-overlay">
+                                    <a href="#" class="cert-view-btn">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cert-content">
+                                <h4>CPE大學生能力程式檢定</h4>
+                                <p class="cert-issuer">CPE5題 排名21</p>
+                                <p class="cert-date">2020年12月</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-card">
+                            <div class="cert-img-container">
+                                <img src="src\MTA-Bvd531at.png" alt="MTA認證" class="cert-img">
+                                <div class="cert-overlay">
+                                    <a href="#" class="cert-view-btn">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cert-content">
+                                <h4>MTA認證</h4>
+                                <p class="cert-issuer">Microsoft Technology Associate</p>
+                                <p class="cert-date">2018年12月</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-img-container">
+                                <img src="src\C2-5oxL8sB6.png" alt="丙軟" class="cert-img">
+                                <div class="cert-overlay">
+                                    <a href="#" class="cert-view-btn">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cert-content">
+                                <h4>丙級電腦軟體應用</h4>
+                                <p class="cert-issuer">丙級電腦軟體應用</p>
+                                <p class="cert-date">2017年12月</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-img-container">
+                                <img src="src\C1-BTuMRODF.png" alt="丙設" class="cert-img">
+                                <div class="cert-overlay">
+                                    <a href="#" class="cert-view-btn">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cert-content">
+                                <h4>丙級電腦軟體設計</h4>
+                                <p class="cert-issuer">丙級軟體設計</p>
+                                <p class="cert-date">2019年10月</p>
+                            </div>
+                        </div>
+                        <!-- 添加更多證照卡片，複製以上結構即可 -->
+                    </div>
+                </section>
+                <!-- 在證照區域後面添加 -->
+                <section class="experiences">
+                    <h3><i class="fas fa-briefcase"></i> 其他經歷</h3>
+                    <div class="experiences-grid">
+                        <!-- 經歷 1 -->
+                        <div class="experience-card">
+                            <div class="exp-img-container">
+                                <img src="src\YTP-BaVLU7M_.jpg" alt="YTP比賽" class="exp-img">
+                                <div class="exp-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="exp-overlay">
+                                    <button class="exp-view-btn" aria-label="放大預覽">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <h4>YTP2019少年圖靈比賽</h4>
+                                    <span class="exp-type">比賽經歷</span>
+                                </div>
+                                <p class="exp-org">複賽 最終排名22</p>
+                                <p class="exp-desc">在競程中通過初選後，最後的88隊要拚出最後的勝負。</p>
+                                <div class="exp-details">
+                                    <span class="exp-date"><i class="far fa-calendar"></i> 2019年</span>
+                                    <span class="exp-location"><i class="fas fa-map-marker-alt"></i> 台北</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 經歷 2 -->
+                        <div class="experience-card">
+                            <div class="exp-img-container">
+                                <img src="src\test-FwaSVZl9.jpg" alt="小論文" class="exp-img">
+                                <div class="exp-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="exp-overlay">
+                                    <button class="exp-view-btn" aria-label="放大預覽">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <h4>2018高雄市小論文自然組</h4>
+                                    <span class="exp-type">比賽經歷</span>
+                                </div>
+                                <p class="exp-org">第1名</p>
+                                <p class="exp-desc">實作IOT溫溼度感測後，投了小論文比賽，取得了第1名。</p>
+                                <div class="exp-details">
+                                    <span class="exp-date"><i class="far fa-calendar"></i> 2018年</span>
+                                    <span class="exp-location"><i class="fas fa-map-marker-alt"></i> 高雄</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 經歷 3 -->
+                        <div class="experience-card">
+                            <div class="exp-img-container">
+                                <img src="src\TOI-BG5jmCC8.png" alt="TOT" class="exp-img">
+                                <div class="exp-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="exp-overlay">
+                                    <button class="exp-view-btn" aria-label="放大預覽">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <h4>臺灣資訊奧林匹亞</h4>
+                                    <span class="exp-type">比賽經歷</span>
+                                </div>
+                                <p class="exp-org">初選</p>
+                                <p class="exp-desc">通過當年的海選，也是該屆唯一的初選高職生，也學習到了人外有人天外有天的世界。</p>
+                                <div class="exp-details">
+                                    <span class="exp-date"><i class="far fa-calendar"></i> 2018年</span>
+                                    <span class="exp-location"><i class="fas fa-map-marker-alt"></i> 台北</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 經歷 4 -->
+                        <div class="experience-card">
+                            <div class="exp-img-container">
+                                <img src="src\M-0d09wA7k.jpg" alt="雲科網管" class="exp-img">
+                                <div class="exp-badge">
+                                    <i class="fab fa-users"></i>
+                                </div>
+                                <div class="exp-overlay">
+                                    <button class="exp-view-btn" aria-label="放大預覽">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <h4>國立雲林科技大學宿網管</h4>
+                                    <span class="exp-type">學習經歷</span>
+                                </div>
+                                <p class="exp-org">CTF的啟蒙</p>
+                                <p class="exp-desc">處理各種學生宿舍內的網路疑難雜症，以及使用Vue為開發前端的網頁維護，以及資安網路相關的應用。</p>
+                                <div class="exp-details">
+                                    <span class="exp-date"><i class="far fa-calendar"></i> 2020年</span>
+                                    <span class="exp-location"><i class="fas fa-globe"></i> 雲林</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 經歷 5 -->
+                        <div class="experience-card">
+                            <div class="exp-img-container">
+                                <img src="src\chiba_eiwa01-CZKnsmiD.jpg" alt="日本交流" class="exp-img">
+                                <div class="exp-badge">
+                                    <i class="fab fa-users"></i>
+                                </div>
+                                <div class="exp-overlay">
+                                    <button class="exp-view-btn" aria-label="放大預覽">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <h4>高雄市小論文日本高校學術交流</h4>
+                                    <span class="exp-type">學術交流</span>
+                                </div>
+                                <p class="exp-org">日本千葉英和高校</p>
+                                <p class="exp-desc">受高雄市政府邀約，與日本學生交流，並上台口頭報告自己小論文內容，訓練未來英文口頭報告能力，也是開始學習日文動力的其中之一。</p>
+                                <div class="exp-details">
+                                    <span class="exp-date"><i class="far fa-calendar"></i> 2019年</span>
+                                    <span class="exp-location"><i class="fas fa-globe"></i>日本</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        
+
+        <!-- 聯繫區域 -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">技術合作與諮詢</h2>
+                <p class="section-subtitle">歡迎討論數據挖掘、自動化或AI相關項目</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h3>電子郵件</h3>
+                                <a href="mailto:ai.data@example.com">ja19991205@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github contact-icon"></i>
+                            <div>
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/Huz0752" target="_blank" rel="noopener noreferrer">github.com/Huz0752</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-file-code contact-icon"></i>
+                            <div>
+                                <h3>技術專長</h3>
+                                <p>AI數據挖掘 / 自動化流程 / LLM應用</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3 class="form-title">項目諮詢</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="projectType">項目類型</label>
+                                <select id="projectType" name="projectType">
+                                    <option value="">選擇項目類型</option>
+                                    <option value="crawler">網路爬蟲開發</option>
+                                    <option value="automation">自動化流程設計</option>
+                                    <option value="llm">LLM/AI應用開發</option>
+                                    <option value="analysis">數據分析與挖掘</option>
+                                    <option value="other">其他技術諮詢</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">姓名 / 公司</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">聯繫郵箱</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">項目描述或需求</label>
+                                <textarea id="message" name="message" rows="5" 
+                                          placeholder="請簡要描述您的項目需求、預期目標或遇到的技術問題..." 
+                                          required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> 發送諮詢
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">伍竣義</div>
+                <p class="footer-tagline">將數據轉化為價值，用自動化釋放生產力</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Huz0752" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#contact">
+                        <i class="fas fa-envelope"></i> 聯繫
+                    </a>
+                </div>
+                <p class="footer-copyright">&copy; <span id="currentYear"></span> 伍竣義. 保留所有權利。</p>
+                <p class="footer-tech">本網站使用純HTML、CSS與JavaScript構建</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
 </html>
