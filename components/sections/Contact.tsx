@@ -1,7 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Code2, Send } from "lucide-react";
+import { Mail, Code2, Send, ChevronDown } from "lucide-react";
+
+const faqs = [
+  {
+    q: "你目前的求職狀態？",
+    a: "目前有 offer 在談，但仍開放接觸合適的機會。若你的職位與 LLM 應用或自動化工程方向相關，歡迎直接聯繫討論。",
+  },
+  {
+    q: "可以接受遠端或哪些地點？",
+    a: "完全接受遠端工作，也可配合台北、新竹等地的辦公室工作。",
+  },
+  {
+    q: "你主要用什麼技術棧？",
+    a: "Python 為主，搭配 LangChain/LlamaIndex（LLM 應用）、n8n（自動化）、Scrapy/Selenium（爬蟲）、FastAPI（後端）。",
+  },
+  {
+    q: "可以接受什麼規模的專案？",
+    a: "從 PoC 原型到中型生產系統都可以，尤其擅長需要快速落地的 AI 應用和自動化流程。",
+  },
+];
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -13,6 +32,7 @@ function GithubIcon({ size = 18 }: { size?: number }) {
 
 export default function Contact() {
   const [form, setForm] = useState({ projectType: "", name: "", email: "", message: "" });
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const placeholders: Record<string, string> = {
     crawler: "請提供目標網站 URL、需要抓取的數據類型、更新頻率等詳細信息。",
@@ -154,6 +174,31 @@ export default function Contact() {
               發送諮詢
             </button>
           </form>
+        </div>
+        {/* FAQ */}
+        <div className="mt-16">
+          <h3 className="text-lg font-semibold text-white mb-6">常見問題</h3>
+          <div className="space-y-2 max-w-2xl">
+            {faqs.map(({ q, a }, i) => (
+              <div key={i} className="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-zinc-800/50 transition-colors"
+                >
+                  <span className="text-sm text-white font-medium">{q}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`text-zinc-400 shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-4 text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-3">
+                    {a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

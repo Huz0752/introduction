@@ -1,0 +1,130 @@
+<h2>設計：Value Prop Section</h2>
+<p class="subtitle">Hero 正下方，進 Tabs 前雇主先看到的區塊。3 種設計風格，選一個。</p>
+
+<div class="options">
+
+  <!-- Style A: 3-column cards -->
+  <div class="option" data-choice="vp-cards" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>3 欄卡片（簡潔版）</h3>
+      <p style="font-size:12px;color:#a1a1aa">每張卡片：大 icon + 標題 + 1 行說明 + 技術 tags。水平排列，乾淨俐落。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Value Prop — 3 Column Cards</div>
+        <div class="mockup-body" style="padding:20px">
+          <div style="text-align:center;margin-bottom:16px">
+            <div style="font-size:11px;color:#60a5fa;letter-spacing:2px;margin-bottom:4px">WHY HIRE ME</div>
+            <div style="font-size:16px;color:#fff;font-weight:600">我能為你解決的問題</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+            <div style="background:#18181b;border:1px solid #27272a;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:24px;margin-bottom:8px">🤖</div>
+              <div style="color:#fff;font-weight:600;font-size:12px;margin-bottom:4px">LLM 應用落地</div>
+              <div style="color:#71717a;font-size:10px;margin-bottom:8px">RAG、Agent、知識庫整合，從 0 到生產環境</div>
+              <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap">
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">LangChain</span>
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">OpenAI</span>
+              </div>
+            </div>
+            <div style="background:#18181b;border:1px solid #27272a;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:24px;margin-bottom:8px">⚙️</div>
+              <div style="color:#fff;font-weight:600;font-size:12px;margin-bottom:4px">流程自動化</div>
+              <div style="color:#71717a;font-size:10px;margin-bottom:8px">n8n + Python，把重複人工流程變成自動管道</div>
+              <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap">
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">n8n</span>
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">Python</span>
+              </div>
+            </div>
+            <div style="background:#18181b;border:1px solid #27272a;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:24px;margin-bottom:8px">🕷️</div>
+              <div style="color:#fff;font-weight:600;font-size:12px;margin-bottom:4px">數據採集系統</div>
+              <div style="color:#71717a;font-size:10px;margin-bottom:8px">大規模爬蟲，反爬對抗，結構化輸出至資料庫</div>
+              <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap">
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">Scrapy</span>
+                <span style="background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:999px;font-size:9px">Selenium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style B: Horizontal problem → solution rows -->
+  <div class="option" data-choice="vp-rows" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>問題 → 解方 橫排（有深度版）</h3>
+      <p style="font-size:12px;color:#a1a1aa">每行：「你的問題」→ 箭頭 → 「我的解法」，比卡片更貼近雇主視角。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Value Prop — Problem → Solution Rows</div>
+        <div class="mockup-body" style="padding:20px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+              <div style="background:#18181b;border:1px solid #7f1d1d40;border-radius:8px;padding:10px 12px;font-size:11px">
+                <div style="color:#f87171;margin-bottom:2px;font-size:10px">❌ 問題</div>
+                <div style="color:#e4e4e7">有大量 PDF / 文件，員工查資料很慢</div>
+              </div>
+              <div style="color:#3b82f6;font-size:16px">→</div>
+              <div style="background:#18181b;border:1px solid #14532d50;border-radius:8px;padding:10px 12px;font-size:11px">
+                <div style="color:#4ade80;margin-bottom:2px;font-size:10px">✅ 我做的</div>
+                <div style="color:#e4e4e7">建 RAG 知識庫 + LLM 問答介面，秒回答</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+              <div style="background:#18181b;border:1px solid #7f1d1d40;border-radius:8px;padding:10px 12px;font-size:11px">
+                <div style="color:#f87171;margin-bottom:2px;font-size:10px">❌ 問題</div>
+                <div style="color:#e4e4e7">每天人工收集競品資料花 2 小時</div>
+              </div>
+              <div style="color:#3b82f6;font-size:16px">→</div>
+              <div style="background:#18181b;border:1px solid #14532d50;border-radius:8px;padding:10px 12px;font-size:11px">
+                <div style="color:#4ade80;margin-bottom:2px;font-size:10px">✅ 我做的</div>
+                <div style="color:#e4e4e7">爬蟲 + n8n 自動排程，每日報告自動推送</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style C: Full-width banner strip -->
+  <div class="option" data-choice="vp-strip" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>全寬 Banner 條（最精簡版）</h3>
+      <p style="font-size:12px;color:#a1a1aa">一行橫排 3 個 highlight，不佔太多空間，像是 Hero 的延伸說明欄。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Value Prop — Banner Strip</div>
+        <div class="mockup-body" style="padding:0">
+          <div style="background:#111113;border-top:1px solid #27272a;border-bottom:1px solid #27272a;display:grid;grid-template-columns:repeat(3,1fr)">
+            <div style="padding:16px 20px;border-right:1px solid #27272a;display:flex;align-items:center;gap:10px">
+              <span style="font-size:18px">🤖</span>
+              <div>
+                <div style="color:#fff;font-size:12px;font-weight:600">LLM 落地</div>
+                <div style="color:#71717a;font-size:10px">RAG · Agent · 知識庫</div>
+              </div>
+            </div>
+            <div style="padding:16px 20px;border-right:1px solid #27272a;display:flex;align-items:center;gap:10px">
+              <span style="font-size:18px">⚙️</span>
+              <div>
+                <div style="color:#fff;font-size:12px;font-weight:600">流程自動化</div>
+                <div style="color:#71717a;font-size:10px">n8n · Python Pipeline</div>
+              </div>
+            </div>
+            <div style="padding:16px 20px;display:flex;align-items:center;gap:10px">
+              <span style="font-size:18px">🕷️</span>
+              <div>
+                <div style="color:#fff;font-size:12px;font-weight:600">數據採集</div>
+                <div style="color:#71717a;font-size:10px">大規模爬蟲 · 反爬對抗</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">選一個你喜歡的風格，再在終端機告訴我。</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Briefcase, Award, Trophy } from "lucide-react";
 import WorkExperience from "@/components/sections/WorkExperience";
 import Certifications from "@/components/sections/Certifications";
@@ -14,8 +14,18 @@ const subTabs: { key: SubTab; label: string; icon: React.ElementType }[] = [
   { key: "others", label: "其他經歷", icon: Trophy },
 ];
 
-export default function ExperienceTab() {
+interface Props {
+  targetSubTab?: string | null;
+}
+
+export default function ExperienceTab({ targetSubTab }: Props) {
   const [active, setActive] = useState<SubTab>("work");
+
+  useEffect(() => {
+    if (targetSubTab === "work" || targetSubTab === "certs" || targetSubTab === "others") {
+      setActive(targetSubTab);
+    }
+  }, [targetSubTab]);
   const [opacity, setOpacity] = useState(1);
 
   const switchTab = (key: SubTab) => {

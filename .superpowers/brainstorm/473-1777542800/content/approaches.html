@@ -1,0 +1,103 @@
+<h2>3 種配置方案</h2>
+<p class="subtitle">相同的 6 個元素（Resume、Open to Work、Value Prop、FAQ、GitHub、文章），放法不同，效果差很多。</p>
+
+<div class="options">
+
+  <!-- Approach A -->
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>最小變動：塞進現有 Tabs</h3>
+      <p style="color:#a1a1aa;font-size:12px;margin-bottom:10px">所有新元素分散整合進現有結構，不新增 section 或 tab。</p>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:11px">
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #3b82f6">
+          <span style="color:#60a5fa;font-weight:600">Hero</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ Resume 按鈕 + Open to Work badge</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：專業領域</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ Value Prop 卡片（加在最上面）</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：技術棧</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ GitHub 語言分布圖</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：聯繫</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ FAQ accordion + 技術文章列表</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;font-size:11px">
+        <div style="background:#14532d30;border:1px solid #16a34a40;color:#4ade80;padding:3px 8px;border-radius:4px">✓ 改動最少</div>
+        <div style="background:#7f1d1d30;border:1px solid #dc262640;color:#f87171;padding:3px 8px;border-radius:4px">✗ Value Prop 被埋在 tab 裡</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach B (recommended) -->
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>⭐ 推薦：Hero 強化 + 獨立 Value Prop + 新 Tab</h3>
+      <p style="color:#a1a1aa;font-size:12px;margin-bottom:10px">Value Prop 獨立放在 Hero 與 Tabs 之間，雇主滾動第一屏後就看到。文章有獨立 tab。</p>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:11px">
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #3b82f6">
+          <span style="color:#60a5fa;font-weight:600">Hero</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ Resume 按鈕 + Open to Work badge</span>
+        </div>
+        <div style="background:#1e293b;border-radius:6px;padding:8px 12px;border-left:3px solid #f59e0b">
+          <span style="color:#fcd34d;font-weight:600">🆕 Value Prop Section</span>
+          <span style="color:#a1a1aa;margin-left:8px">3 張「我能解決什麼」卡片，Hero 正下方</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：技術棧</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ GitHub 語言分布圖</span>
+        </div>
+        <div style="background:#1e293b;border-radius:6px;padding:8px 12px;border-left:3px solid #f59e0b">
+          <span style="color:#fcd34d;font-weight:600">🆕 Tab：文章</span>
+          <span style="color:#a1a1aa;margin-left:8px">技術文章列表，連結外部平台</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：聯繫</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ FAQ accordion（底部）</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;font-size:11px">
+        <div style="background:#14532d30;border:1px solid #16a34a40;color:#4ade80;padding:3px 8px;border-radius:4px">✓ Value Prop 最顯眼</div>
+        <div style="background:#14532d30;border:1px solid #16a34a40;color:#4ade80;padding:3px 8px;border-radius:4px">✓ 文章有專屬空間</div>
+        <div style="background:#14532d30;border:1px solid #16a34a40;color:#4ade80;padding:3px 8px;border-radius:4px">✓ 結構清晰</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Approach C -->
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hero 全面強化（緊湊版）</h3>
+      <p style="color:#a1a1aa;font-size:12px;margin-bottom:10px">把更多內容拉進 Hero，主頁面一次看到更多。適合想讓「第一屏」就有完整印象的設計。</p>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:11px">
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #3b82f6">
+          <span style="color:#60a5fa;font-weight:600">Hero（擴充）</span>
+          <span style="color:#a1a1aa;margin-left:8px">Resume + Open to Work + Value Prop 3 卡 + Articles 快速連結</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：技術棧</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ GitHub 語言分布圖</span>
+        </div>
+        <div style="background:#1c1c1e;border-radius:6px;padding:8px 12px;border-left:3px solid #27272a">
+          <span style="color:#e4e4e7;font-weight:600">Tab：聯繫</span>
+          <span style="color:#a1a1aa;margin-left:8px">+ FAQ accordion</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;font-size:11px;flex-wrap:wrap">
+        <div style="background:#14532d30;border:1px solid #16a34a40;color:#4ade80;padding:3px 8px;border-radius:4px">✓ Hero 印象深刻</div>
+        <div style="background:#7f1d1d30;border:1px solid #dc262640;color:#f87171;padding:3px 8px;border-radius:4px">✗ Hero 可能過長</div>
+        <div style="background:#7f1d1d30;border:1px solid #dc262640;color:#f87171;padding:3px 8px;border-radius:4px">✗ 文章無專屬空間</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">我推薦 B——Value Prop 讓雇主在進 Tabs 前就理解你的價值，效果最強。點選你偏好的方案，再在終端機告訴我。</p>

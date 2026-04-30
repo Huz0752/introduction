@@ -1,0 +1,95 @@
+<h2>設計：Hero 改動</h2>
+<p class="subtitle">Resume 按鈕 + Open to Work badge — 兩種放法，選一個。</p>
+
+<div class="section">
+  <h3>Resume 按鈕放法</h3>
+  <div class="options">
+    <div class="option" data-choice="resume-cta" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>加在現有 CTA 按鈕列</h3>
+        <p>「查看專案實例」旁邊加一個 Resume 按鈕，三按鈕並排。</p>
+        <div class="mockup" style="margin-top:10px">
+          <div class="mockup-body" style="display:flex;gap:8px;align-items:center;padding:14px;flex-wrap:wrap">
+            <div style="background:#2563eb;color:#fff;padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600">查看專案實例</div>
+            <div style="border:1px solid #3f3f46;color:#d4d4d8;padding:8px 16px;border-radius:7px;font-size:12px">技術諮詢</div>
+            <div style="border:1px solid #3b82f660;color:#60a5fa;padding:8px 16px;border-radius:7px;font-size:12px;display:flex;align-items:center;gap:5px">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              下載履歷
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="option" data-choice="resume-nav" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>加在 Navbar 右側</h3>
+        <p>Navbar 的「立即聯繫」旁邊加 Resume 按鈕，讓每一頁都能找到，不只 Hero 頂端。</p>
+        <div class="mockup" style="margin-top:10px">
+          <div class="mockup-body" style="padding:8px 14px">
+            <div class="mock-nav" style="background:transparent;border:none;display:flex;justify-content:space-between;align-items:center;font-size:11px">
+              <span style="color:#fff;font-weight:700">伍竣義</span>
+              <div style="display:flex;gap:6px;align-items:center">
+                <span style="color:#71717a">專業領域</span>
+                <span style="color:#71717a">專案</span>
+                <span style="color:#71717a">…</span>
+                <div style="border:1px solid #3b82f660;color:#60a5fa;padding:3px 8px;border-radius:5px;font-size:10px">⬇ 履歷</div>
+                <div style="background:#2563eb;color:#fff;padding:3px 8px;border-radius:5px;font-size:10px">立即聯繫</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:24px">
+  <h3>Open to Work badge 位置</h3>
+  <div class="options">
+    <div class="option" data-choice="otw-name" onclick="toggleSelect(this)">
+      <div class="letter">C</div>
+      <div class="content">
+        <h3>名字下方（副標題旁）</h3>
+        <p>緊接在「AI Data Engineer」那行文字下方，視線自然看到。</p>
+        <div class="mockup" style="margin-top:10px">
+          <div class="mockup-body" style="padding:14px">
+            <div style="font-size:11px">
+              <div style="color:#60a5fa;letter-spacing:2px;font-size:10px;margin-bottom:4px">AI DATA ENGINEER</div>
+              <div style="color:#fff;font-size:22px;font-weight:700;margin-bottom:4px">伍竣義</div>
+              <div style="color:#71717a;margin-bottom:8px">數據挖掘 · 爬蟲 · 自動化</div>
+              <div style="display:inline-flex;align-items:center;gap:5px;background:#14532d25;border:1px solid #16a34a40;color:#4ade80;padding:3px 10px;border-radius:999px;font-size:10px">
+                <span style="width:5px;height:5px;background:#4ade80;border-radius:50%;display:inline-block;animation:pulse 2s infinite"></span>
+                Open to Full-time
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="option" data-choice="otw-avatar" onclick="toggleSelect(this)">
+      <div class="letter">D</div>
+      <div class="content">
+        <h3>頭像右下角 overlay</h3>
+        <p>頭像圓形照片的右下角疊一個小綠點徽章，視覺焦點集中，不打斷文字流。</p>
+        <div class="mockup" style="margin-top:10px">
+          <div class="mockup-body" style="padding:14px;display:flex;justify-content:center">
+            <div style="position:relative;display:inline-block">
+              <div style="width:64px;height:64px;border-radius:50%;background:#27272a;border:2px solid #3f3f46;display:flex;align-items:center;justify-content:center;color:#71717a;font-size:10px">頭像</div>
+              <div style="position:absolute;bottom:2px;right:2px;width:16px;height:16px;background:#16a34a;border-radius:50%;border:2px solid #0a0a0a;display:flex;align-items:center;justify-content:center">
+                <div style="width:6px;height:6px;background:#4ade80;border-radius:50%"></div>
+              </div>
+            </div>
+            <div style="margin-left:12px;display:flex;flex-direction:column;justify-content:center;font-size:10px">
+              <div style="color:#e4e4e7;margin-bottom:3px">懸停頭像可見 tooltip：</div>
+              <div style="background:#18181b;border:1px solid #27272a;color:#4ade80;padding:3px 8px;border-radius:4px;font-size:10px">● Open to Full-time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:16px">選 Resume 放法（A 或 B）和 Open to Work 位置（C 或 D），可各選一個。再到終端機告訴我。</p>

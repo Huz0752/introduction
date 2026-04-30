@@ -1,0 +1,147 @@
+<h2>可以加入的新元素</h2>
+<p class="subtitle">根據你的情況（雇主導向、LLM/自動化定位、有 PDF 履歷）篩選出的選項。可複選。</p>
+
+<div class="options" data-multiselect>
+
+  <div class="option" data-choice="resume" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>📄 Resume 下載按鈕</h3>
+      <p>Hero 區或 Navbar 加一個「下載履歷」按鈕，直接輸出你的 PDF。雇主最直接需要的東西。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="display:flex;gap:8px;align-items:center;padding:12px">
+          <div style="background:#2563eb;color:#fff;padding:6px 14px;border-radius:6px;font-size:12px">⬇ 下載履歷 PDF</div>
+          <div style="background:#27272a;color:#a1a1aa;padding:6px 14px;border-radius:6px;font-size:12px">聯繫我</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="opentowork" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>🟢 求職狀態標記</h3>
+      <p>Hero 或 Navbar 加一個小徽章「Open to Work」或「目前求職中」，讓雇主一眼知道你可以聯繫。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="padding:12px;display:flex;align-items:center;gap:8px">
+          <div style="display:flex;align-items:center;gap:6px;background:#14532d30;border:1px solid #16a34a50;color:#4ade80;padding:4px 10px;border-radius:999px;font-size:11px">
+            <span style="width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block"></span>
+            Open to Work
+          </div>
+          <span style="color:#71717a;font-size:11px">顯示在頭像旁或名字下方</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="valuprop" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>🎯 我能解決什麼問題</h3>
+      <p>獨立一個 section，用 3 張卡片說明你對雇主的具體價值：例如「幫你建 LLM Pipeline」「幫你把手動流程自動化」「幫你採集市場數據」。比技術清單更有說服力。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="display:flex;gap:8px;padding:12px">
+          <div style="flex:1;background:#18181b;border:1px solid #3b82f620;border-radius:8px;padding:10px;font-size:11px">
+            <div style="color:#60a5fa;margin-bottom:4px">🤖 LLM Pipeline</div>
+            <div style="color:#71717a">從 0 建構 RAG / Agent 系統，整合業務知識庫</div>
+          </div>
+          <div style="flex:1;background:#18181b;border:1px solid #3b82f620;border-radius:8px;padding:10px;font-size:11px">
+            <div style="color:#60a5fa;margin-bottom:4px">⚙️ 流程自動化</div>
+            <div style="color:#71717a">n8n + Python 自動化，取代重複性人工作業</div>
+          </div>
+          <div style="flex:1;background:#18181b;border:1px solid #3b82f620;border-radius:8px;padding:10px;font-size:11px">
+            <div style="color:#60a5fa;margin-bottom:4px">🕷️ 數據採集</div>
+            <div style="color:#71717a">大規模爬蟲系統，反爬對抗，結構化輸出</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="testimonials" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>💬 推薦語 / 合作評價</h3>
+      <p>前同事、教授、或合作方留言。即使只有 2~3 條，對雇主的信任感提升很明顯。需要你有素材。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="padding:12px">
+          <div style="background:#18181b;border-left:2px solid #3b82f6;padding:10px;border-radius:4px;font-size:11px;color:#a1a1aa">
+            「竣義在爬蟲架構設計上展現了成熟的工程判斷力…」
+            <div style="margin-top:6px;color:#71717a">— 某某教授，臺灣科技大學</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="faq" onclick="toggleSelect(this)">
+    <div class="letter">E</div>
+    <div class="content">
+      <h3>❓ FAQ 區塊</h3>
+      <p>雇主常見問題：接受遠端嗎？擅長什麼規模的專案？多快能上手？用 accordion 展示，讓訪客不用寫信就能得到答案。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="padding:12px">
+          <div style="border:1px solid #27272a;border-radius:6px;overflow:hidden;font-size:11px">
+            <div style="padding:8px 12px;border-bottom:1px solid #27272a;display:flex;justify-content:space-between;color:#e4e4e7">
+              <span>你接受遠端工作嗎？</span><span style="color:#3b82f6">▼</span>
+            </div>
+            <div style="padding:8px 12px;color:#71717a;background:#18181b">
+              接受，過去 2 年主要以遠端協作為主…
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="github" onclick="toggleSelect(this)">
+    <div class="letter">F</div>
+    <div class="content">
+      <h3>📊 GitHub 語言分布</h3>
+      <p>即使 repo 是私有的，GitHub API 也能拿到語言分布統計。視覺化呈現你的程式語言比例，佐證技術廣度。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="padding:12px">
+          <div style="display:flex;gap:6px;align-items:center;font-size:11px">
+            <div style="flex:4;background:#3b82f6;height:8px;border-radius:4px 0 0 4px"></div>
+            <div style="flex:2;background:#f59e0b;height:8px"></div>
+            <div style="flex:1;background:#10b981;height:8px;border-radius:0 4px 4px 0"></div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:6px;font-size:10px;color:#71717a">
+            <span>● Python 58%</span>
+            <span>● C++ 24%</span>
+            <span>● Go 11%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="blog" onclick="toggleSelect(this)">
+    <div class="letter">G</div>
+    <div class="content">
+      <h3>✍️ 技術文章 / 思考展示</h3>
+      <p>列出 2~3 篇你寫過的文章、筆記、或技術洞察（Medium、HackMD、掘金等），展示你對 LLM/自動化的深度思考。雇主很吃這個。</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-body" style="padding:12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;border-bottom:1px solid #27272a;padding-bottom:6px">
+            <div>
+              <div style="color:#e4e4e7">RAG 系統設計：從 Naive 到 Advanced</div>
+              <div style="color:#71717a;margin-top:2px">LLM · RAG · 2025-03</div>
+            </div>
+            <div style="color:#3b82f6">→</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px">
+            <div>
+              <div style="color:#e4e4e7">n8n + GPT：讓客服自動化的實戰筆記</div>
+              <div style="color:#71717a;margin-top:2px">自動化 · n8n · 2024-11</div>
+            </div>
+            <div style="color:#3b82f6">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">點選你有興趣的項目（可多選），再在終端機告訴我你的想法。</p>

@@ -31,6 +31,14 @@ const aiTools = [
   "模型微調",
 ];
 
+const langStats = [
+  { name: "Python", pct: 60, color: "#3b82f6" },
+  { name: "C++", pct: 18, color: "#f59e0b" },
+  { name: "Go", pct: 7, color: "#10b981" },
+  { name: "TypeScript", pct: 12, color: "#8b5cf6" },
+  { name: "其他", pct: 3, color: "#52525b" },
+];
+
 export default function TechStack() {
   const ref = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
@@ -120,6 +128,40 @@ export default function TechStack() {
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* GitHub Language Distribution */}
+          <div className="p-8 rounded-xl bg-zinc-900 border border-zinc-800">
+            <div className="flex items-center justify-between mb-5">
+              <h3 className="text-sm font-medium text-zinc-400 uppercase tracking-widest">
+                GitHub 語言分布
+              </h3>
+              <a
+                href="https://github.com/Huz0752"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                github.com/Huz0752 →
+              </a>
+            </div>
+            <div className="flex h-2.5 rounded-full overflow-hidden mb-4">
+              {langStats.map(({ name, pct, color }) => (
+                <div
+                  key={name}
+                  style={{ flex: pct, background: color }}
+                  title={`${name} ${pct}%`}
+                />
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {langStats.map(({ name, pct, color }) => (
+                <span key={name} className="flex items-center gap-1.5 text-xs text-zinc-400">
+                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: color }} />
+                  {name} {pct}%
+                </span>
+              ))}
             </div>
           </div>
         </div>

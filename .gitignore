@@ -59,3 +59,6 @@ ehthumbs.db
 
 # claude code (本地 AI 設定，不需進版控)
 .claude
+CLAUDE.md
+
+.superpower/

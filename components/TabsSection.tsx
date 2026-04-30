@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Layers, FolderOpen, Code2, Clock, Mail } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Layers, FolderOpen, Code2, Clock, Mail, BookOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Expertise from "@/components/sections/Expertise";
 import Portfolio from "@/components/sections/Portfolio";
 import TechStack from "@/components/sections/TechStack";
 import ExperienceTab from "@/components/sections/ExperienceTab";
 import Contact from "@/components/sections/Contact";
+import Articles from "@/components/sections/Articles";
 
-type TabKey = "expertise" | "portfolio" | "tech" | "experience" | "contact";
+type TabKey = "expertise" | "portfolio" | "tech" | "experience" | "articles" | "contact";
 
 interface Tab {
   key: TabKey;
@@ -22,22 +23,31 @@ const tabs: Tab[] = [
   { key: "portfolio", label: "專案實例", icon: FolderOpen },
   { key: "tech", label: "技術棧", icon: Code2 },
   { key: "experience", label: "工作與經歷", icon: Clock },
+  // { key: "articles", label: "文章", icon: BookOpen },
   { key: "contact", label: "聯繫", icon: Mail },
 ];
 
-function TabContent({ active }: { active: TabKey }) {
-  switch (active) {
-    case "expertise":   return <Expertise />;
-    case "portfolio":   return <Portfolio />;
-    case "tech":        return <TechStack />;
-    case "experience":  return <ExperienceTab />;
-    case "contact":     return <Contact />;
-  }
-}
+const HASH_TO_TAB: Record<string, TabKey> = {
+  expertise: "expertise",
+  portfolio: "portfolio",
+  tech: "tech",
+  work: "experience",
+  certifications: "experience",
+  experiences: "experience",
+  articles: "articles",
+  contact: "contact",
+};
+
+const HASH_TO_SUBTAB: Record<string, string> = {
+  work: "work",
+  certifications: "certs",
+  experiences: "others",
+};
 
 export default function TabsSection() {
   const [active, setActive] = useState<TabKey>("expertise");
   const [opacity, setOpacity] = useState(1);
+  const [pendingSubTab, setPendingSubTab] = useState<string | null>(null);
 
   const switchTab = (key: TabKey) => {
     if (key === active) return;
@@ -47,6 +57,23 @@ export default function TabsSection() {
       setOpacity(1);
     }, 200);
   };
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail;
+      const tabKey = HASH_TO_TAB[id];
+      if (!tabKey) return;
+      setPendingSubTab(HASH_TO_SUBTAB[id] ?? null);
+      if (tabKey === active) return;
+      setOpacity(0);
+      setTimeout(() => {
+        setActive(tabKey);
+        setOpacity(1);
+      }, 200);
+    };
+    window.addEventListener("navClick", handler);
+    return () => window.removeEventListener("navClick", handler);
+  }, [active]);
 
   return (
     <div id="tabs" className="border-t border-zinc-800 min-h-screen">
@@ -77,7 +104,12 @@ export default function TabsSection() {
 
       {/* Tab content with fade transition */}
       <div style={{ opacity, transition: "opacity 0.2s ease" }}>
-        <TabContent active={active} />
+        {active === "expertise" && <Expertise />}
+        {active === "portfolio" && <Portfolio />}
+        {active === "tech" && <TechStack />}
+        {active === "experience" && <ExperienceTab targetSubTab={pendingSubTab} />}
+        {/* {active === "articles" && <Articles />} */}
+        {active === "contact" && <Contact />}
       </div>
     </div>
   );

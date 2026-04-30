@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import { Mail, ZoomIn, ZoomOut, RotateCcw, Download } from "lucide-react";
 
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (
@@ -13,6 +13,11 @@ function GithubIcon({ size = 20 }: { size?: number }) {
 }
 
 const tags = ["Python", "C++", "網路爬蟲", "LLM 應用", "n8n 自動化", "數據挖掘"];
+
+function goTab(id: string) {
+  window.dispatchEvent(new CustomEvent("navClick", { detail: id }));
+  document.getElementById("tabs")?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Hero() {
   const [scale, setScale] = useState(1);
@@ -43,7 +48,7 @@ export default function Hero() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-blue-400 text-sm font-medium tracking-widest uppercase">
-              AI Data Engineer
+              LLM & Automation Engineer
             </p>
             <h1 className="text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight">
               伍竣義
@@ -69,17 +74,27 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <a
-              href="#tabs"
+            <button
+              onClick={() => goTab("portfolio")}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-600/25"
             >
               查看專案實例
-            </a>
-            <a
-              href="#tabs"
+            </button>
+            <button
+              onClick={() => goTab("contact")}
               className="px-6 py-3 border border-zinc-700 hover:border-blue-500 text-zinc-300 hover:text-white font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
             >
               技術諮詢
+            </button>
+            <a
+              href="/assets/resume.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 border border-blue-500/40 hover:border-blue-400 text-blue-400 hover:text-blue-300 font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <Download size={15} />
+              下載履歷
             </a>
           </div>
 
@@ -128,6 +143,17 @@ export default function Hero() {
                 style={{ transform: `scale(${scale})` }}
                 priority
               />
+            </div>
+            {/* Status badge */}
+            <div className="group absolute bottom-3 right-3">
+              <div className="w-8 h-8 rounded-full bg-yellow-600 border-4 border-zinc-950 flex items-center justify-center shadow-lg cursor-default">
+                <span className="w-3 h-3 rounded-full bg-yellow-300 animate-pulse" />
+              </div>
+              <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <div className="bg-zinc-800 border border-zinc-700 text-yellow-300 text-xs font-medium px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl">
+                  ● Pending Offer
+                </div>
+              </div>
             </div>
           </div>
 
